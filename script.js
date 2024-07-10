@@ -1,4 +1,7 @@
 const form = document.querySelector("form");
+frm = document.querySelector("form");
+success = document.getElementById("submitSuccess");
+
 
 // Quand on submit
 form.addEventListener("submit", (event) => {
@@ -60,6 +63,10 @@ form.addEventListener("submit", (event) => {
     //alert("Tous les champs sont valides. Formulaire soumis !");
     // Vous pouvez envoyer le formulaire ou effectuer d'autres actions ici
     // document.getElementById("form").submit(); // Décommenter cette ligne pour soumettre le formulaire
-    document.getElementById("submitSuccess").textContent = "Tous les champs sont valides. Formulaire soumis !";
+    
+    frm.style.display = "none";
+    document.getElementById('submitSuccess').innerHTML = "Inscription réussie ! Votre inscription a été validée avec succès. Merci pour votre participation !"
+
+    
   }
 });
