@@ -1,5 +1,8 @@
 const form = document.getElementById("myForm");
 const success = document.getElementById("submitSuccess");
+const submitBtn = document.getElementById("submitBtn");
+const fields = ["prenom", "nom", "email", "motdepasse"];
+let currentFieldIndex = 0;
 
 form.addEventListener("input", function (event) {
   if (event.target.tagName === "INPUT") {
@@ -10,46 +13,17 @@ form.addEventListener("input", function (event) {
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  let isValid = true;
   clearErrors();
   clearSuccessMessage();
 
-  const prenom = document.getElementById("prenom").value.trim();
-  const nom = document.getElementById("nom").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const motdepasse = document.getElementById("motdepasse").value.trim();
+  let isValid = true;
 
-  if (!isValidName(prenom)) {
-    showError(
-      "prenomError",
-      "Prénom invalide. Le prénom doit contenir entre 3 et 15 lettres."
-    );
-    isValid = false;
-  }
-
-  if (!isValidName(nom)) {
-    showError(
-      "nomError",
-      "Nom invalide. Le nom doit contenir entre 3 et 15 lettres."
-    );
-    isValid = false;
-  }
-
-  if (!isValidEmail(email)) {
-    showError(
-      "emailError",
-      "Adresse email invalide. Veuillez entrer une adresse email valide."
-    );
-    isValid = false;
-  }
-
-  if (!isValidPassword(motdepasse)) {
-    showError(
-      "motdepasseError",
-      "Mot de passe invalide. Le mot de passe doit contenir au moins 8 caractères."
-    );
-    isValid = false;
-  }
+  fields.forEach((field) => {
+    const value = document.getElementById(field).value.trim();
+    if (!validateAndShowNext(field, value)) {
+      isValid = false;
+    }
+  });
 
   if (isValid) {
     form.style.display = "none";
@@ -62,27 +36,42 @@ function validateField(input) {
   const fieldName = input.name;
   const value = input.value.trim();
 
+  if (validateAndShowNext(fieldName, value)) {
+    enableSubmitButtonIfValid();
+  } else {
+    disableSubmitButton();
+  }
+}
+
+function validateAndShowNext(fieldName, value) {
+  let isValid = false;
+
   switch (fieldName) {
     case "prenom":
     case "nom":
-      if (!isValidName(value)) {
+      isValid = isValidName(value);
+      if (!isValid) {
         showError(
           `${fieldName}Error`,
           "Le champ doit contenir entre 3 et 15 lettres."
         );
       } else {
         clearError(`${fieldName}Error`);
+        showNextField(fieldName);
       }
       break;
     case "email":
-      if (!isValidEmail(value)) {
+      isValid = isValidEmail(value);
+      if (!isValid) {
         showError("emailError", "Veuillez entrer une adresse email valide.");
       } else {
         clearError("emailError");
+        showNextField(fieldName);
       }
       break;
     case "motdepasse":
-      if (!isValidPassword(value)) {
+      isValid = isValidPassword(value);
+      if (!isValid) {
         showError(
           "motdepasseError",
           "Le mot de passe doit contenir au moins 8 caractères."
@@ -92,10 +81,39 @@ function validateField(input) {
       }
       break;
   }
+
+  return isValid;
+}
+
+function showNextField(currentField) {
+  const currentIndex = fields.indexOf(currentField);
+  if (currentIndex >= 0 && currentIndex < fields.length - 1) {
+    document
+      .getElementById(`${fields[currentIndex + 1]}Div`)
+      .classList.remove("hidden");
+  }
+}
+
+function enableSubmitButtonIfValid() {
+  let allValid = true;
+  fields.forEach((field) => {
+    const value = document.getElementById(field).value.trim();
+    if (!validateAndShowNext(field, value)) {
+      allValid = false;
+    }
+  });
+
+  if (allValid) {
+    submitBtn.disabled = false;
+  }
+}
+
+function disableSubmitButton() {
+  submitBtn.disabled = true;
 }
 
 function isValidName(name) {
-  const regex = /^[a-zA-Z]{3,15}$/;
+  const regex = /^[a-zA-Z\s]{3,15}$/;
   return regex.test(name);
 }
 
@@ -118,10 +136,9 @@ function clearError(elementId) {
 }
 
 function clearErrors() {
-  clearError("prenomError");
-  clearError("nomError");
-  clearError("emailError");
-  clearError("motdepasseError");
+  fields.forEach((field) => {
+    clearError(`${field}Error`);
+  });
 }
 
 function clearSuccessMessage() {

@@ -17,46 +17,65 @@
 
 <body>
     <div class="container mt-5">
-        <div class="formulaire">
-            <h1>Validation formulaire avec JS</h1>
-            <div class="success" id="submitSuccess"></div>
+      <div class="formulaire">
+        <h1>Validation formulaire avec JS</h1>
+        <div id="submitSuccess"></div>
         <form id="myForm">
-            <div class="mb-3 col-lg-12">
-                <label for="prenom" class="form-label">Prénom</label>
-                <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Mame Fatou">
-                <span class="error alert-danger" id="prenomError"></span>
-              </div>
-
-              <div class="mb-3 col-lg-12">
-                <label for="nom" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="nom" name="nom" placeholder="Mbaye">
-                <span class="error alert-danger" id="nomError"></span>
-              </div>
-
-            <div class="mb-3 col-lg-12">
-              <label for="email" class="form-label">Adresse électronique</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="mfm@simplon.co">
-              <span class="error alert-danger" id="emailError"></span>
-            </div>
-
-            <div class="mb-3 col-lg-12">
-                <label for="motdepasse" class="form-label">Mot de passe</label>
-                <input type="password" class="form-control" id="motdepasse" name="motdepasse" placeholder="mot de passe">
-                <span class="error alert-danger" id="motdepasseError"></span>
-              </div>
-            
-            <button type="submit" class="btn btn-submit" id="submit">S'inscrire</button>
-            
-          </form>
-          
-        </div>
-        <div class="welcome">
-            <img src="images/sol-logo.png" alt="">
-            <h1>La plateforme collaborative d'apprentissage en pédagogie active</h1>
-            <h1 id="powered">Powered by Mouhammad Ndour</h1>
-        </div>
+          <div id="prenomDiv" class="mb-3 col-lg-12">
+            <label for="prenom" class="form-label">Prénom</label>
+            <input
+              type="text"
+              id="prenom"
+              name="prenom"
+              class="form-control"
+              placeholder="Mame Fatou"
+            />
+            <span id="prenomError" class="error"></span>
+          </div>
+          <div id="nomDiv" class="hidden">
+            <label for="nom" class="form-label">Nom</label>
+            <input
+              type="text"
+              id="nom"
+              name="nom"
+              class="form-control"
+              placeholder="Mbaye"
+            />
+            <span id="nomError" class="error"></span>
+          </div>
+          <div id="emailDiv" class="hidden">
+            <label for="email" class="form-label">Adresse électronique</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="mfm@simplon.co"
+            />
+            <span id="emailError" class="error"></span>
+          </div>
+          <div id="motdepasseDiv" class="hidden">
+            <label for="motdepasse" class="form-label">Mot de passe</label>
+            <input
+              type="password"
+              id="motdepasse"
+              name="motdepasse"
+              class="form-control"
+              placeholder="mot de passe"
+            />
+            <span id="motdepasseError" class="error"></span>
+          </div>
+          <button class="btn btn-submit" type="submit" id="submitBtn" disabled>
+            S'inscrire
+          </button>
+        </form>
+      </div>
+      <div class="welcome">
+        <img src="images/sol-logo.png" alt="" />
+        <h1>La plateforme collaborative d'apprentissage en pédagogie active</h1>
+        <h1 id="powered">Powered by Mouhammad Ndour</h1>
+      </div>
     </div>
 
-    
-</body>
+  </body>
 </html>
