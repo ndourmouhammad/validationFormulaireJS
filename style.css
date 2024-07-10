@@ -1,104 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&display=swap");
 
 body {
-    padding: 0;
-    margin: 0;
-    font-family: 'Nunito Sans', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* Ajout de cette ligne */
-    background-image: url(images/background-simplon-pattern.svg);
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Ajout de cette ligne */
+  background-image: url(images/background-simplon-pattern.svg);
 }
 
-.btn-submit
-{
-    border: 1px solid #CE0033;
-    background-color: #CE0033;
-    color: white;
-    cursor: pointer;
+#submitBtn {
+  border: 1px solid #ce0033;
+  background-color: #ce0033;
+  color: white;
+  cursor: pointer;
 }
 
-.btn-submit:hover 
-{
-    border: 1px solid #504DC1;
-    background-color: #504DC1;
-    color: white;
+#submitBtn:hover {
+  border: 1px solid #504dc1;
+  background-color: #504dc1;
+  color: white;
 }
 
-.error
-{
-    color: #CE0033;
-}
-
-.success
-{
-    color: green;
-    margin-top: 10px;
-}
-.welcome {
-    width: 50%;
-    height: 28rem;
-    border-radius: 10%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-bottom: -10rem;
-}
-.welcome img {
-    width: 60%;
-}
-.welcome h1 {
-    font-size: 20px;
-}
-#powered {
-    text-decoration: underline;
-    color: #CE0033;
-}
-.container {
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-    gap: 2rem;
-}
-.formulaire {
-    padding: 20px;
-    border-radius: 5px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.hide {
-    display: none;
-}
 .error {
-    display: block;
-    margin-top: 5px;
+  color: #ce0033;
 }
 
 .success {
-    color: green;
-    font-weight: bold;
-    margin-top: 20px;
+  color: green;
+  margin-top: 10px;
+}
+.welcome {
+  width: 50%;
+  height: 28rem;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: -10rem;
+}
+.welcome img {
+  width: 60%;
+}
+.welcome h1 {
+  font-size: 20px;
+}
+#powered {
+  text-decoration: underline;
+  color: #ce0033;
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+}
+.formulaire {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.hide {
+  display: none;
+}
+.error {
+  display: block;
+  margin-top: 5px;
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
+
+#submitSuccess {
+  color: green;
+  font-weight: bold;
+  margin-top: 20px;
 }
 @media only screen and (max-width: 767px) {
-    body {
-        /* Exemples de styles pour les téléphones */
-        font-size: 14px;
-    }
-    .welcome {
-        display: none;
-    }
+  body {
+    /* Exemples de styles pour les téléphones */
+    font-size: 14px;
+  }
+  .welcome {
+    display: none;
+  }
 
-    .formulaire {
-        width: 90%; /* Par exemple, réduire la largeur du formulaire */
-        padding: 15px;
-    }
+  .formulaire {
+    width: 90%; /* Par exemple, réduire la largeur du formulaire */
+    padding: 15px;
+  }
 
-    .btn-submit {
-        font-size: 14px; /* Redimensionner le bouton */
-    }
-    h1 {
-        font-size: 25px;
-        text-align: center;
-    }
+  .btn-submit {
+    font-size: 14px; /* Redimensionner le bouton */
+  }
+  h1 {
+    font-size: 25px;
+    text-align: center;
+  }
 }
