@@ -14,12 +14,13 @@
     <!-- link du fichier script.js -->
      <script src="script.js" defer></script>
 </head>
+
 <body>
     <div class="container mt-5">
         <div class="formulaire">
             <h1>Validation formulaire avec JS</h1>
             <div class="success" id="submitSuccess"></div>
-        <form>
+        <form id="myForm">
             <div class="mb-3 col-lg-12">
                 <label for="prenom" class="form-label">Prénom</label>
                 <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Mame Fatou">
@@ -44,7 +45,6 @@
                 <span class="error alert-danger" id="motdepasseError"></span>
               </div>
             
-            
             <button type="submit" class="btn btn-submit" id="submit">S'inscrire</button>
             
           </form>
@@ -56,5 +56,7 @@
             <h1 id="powered">Powered by Mouhammad Ndour</h1>
         </div>
     </div>
+
+    
 </body>
 </html>
