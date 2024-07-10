@@ -13,6 +13,9 @@ form.addEventListener("submit", (event) => {
   document.getElementById("emailError").textContent = "";
   document.getElementById("motdepasseError").textContent = "";
 
+  // Message de succès
+  document.getElementById("submitSuccess").textContent = "";
+
   // Récupérer les valeurs des champs
   const prenom = document.getElementById("prenom").value;
   const nom = document.getElementById("nom").value;
@@ -54,8 +57,9 @@ form.addEventListener("submit", (event) => {
 
   // Si toutes les validations sont réussies, soumettre le formulaire
   if (isValid) {
-    alert("Tous les champs sont valides. Formulaire soumis !");
+    //alert("Tous les champs sont valides. Formulaire soumis !");
     // Vous pouvez envoyer le formulaire ou effectuer d'autres actions ici
     // document.getElementById("form").submit(); // Décommenter cette ligne pour soumettre le formulaire
-}
+    document.getElementById("submitSuccess").textContent = "Tous les champs sont valides. Formulaire soumis !";
+  }
 });
