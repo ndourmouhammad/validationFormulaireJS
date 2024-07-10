@@ -16,27 +16,28 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1>Validation formulaire avec JS</h1>
+        <div class="formulaire">
+            <h1>Validation formulaire avec JS</h1>
         <form>
-            <div class="mb-3 col-lg-6">
+            <div class="mb-3 col-lg-12">
                 <label for="prenom" class="form-label">Prénom</label>
                 <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Mame Fatou">
                 <span class="error alert-danger" id="prenomError"></span>
               </div>
 
-              <div class="mb-3 col-lg-6">
+              <div class="mb-3 col-lg-12">
                 <label for="nom" class="form-label">Nom</label>
                 <input type="text" class="form-control" id="nom" name="nom" placeholder="Mbaye">
                 <span class="error alert-danger" id="nomError"></span>
               </div>
 
-            <div class="mb-3 col-lg-6">
+            <div class="mb-3 col-lg-12">
               <label for="email" class="form-label">Adresse électronique</label>
               <input type="email" class="form-control" id="email" name="email" placeholder="mfm@simplon.co">
               <span class="error alert-danger" id="emailError"></span>
             </div>
 
-            <div class="mb-3 col-lg-6">
+            <div class="mb-3 col-lg-12">
                 <label for="motdepasse" class="form-label">Mot de passe</label>
                 <input type="password" class="form-control" id="motdepasse" name="motdepasse" placeholder="mot de passe">
                 <span class="error alert-danger" id="motdepasseError"></span>
@@ -46,6 +47,12 @@
             <button type="submit" class="btn btn-submit" id="submit">S'inscrire</button>
             <div class="success" id="submitSuccess"></div>
           </form>
+        </div>
+        <div class="welcome">
+            <img src="images/sol-logo.png" alt="">
+            <h1>La plateforme collaborative d'apprentissage en pédagogie active</h1>
+            <h1 class="powered">Powered by Mouhammad Ndour</h1>
+        </div>
     </div>
 </body>
 </html>

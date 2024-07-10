@@ -4,6 +4,11 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Nunito Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ajout de cette ligne */
+    background-image: url(images/background-simplon-pattern.svg);
 }
 
 .btn-submit
@@ -30,4 +35,34 @@ body {
 {
     color: green;
     margin-top: 10px;
+}
+.welcome {
+    width: 50%;
+    height: 28rem;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: -10rem;
+}
+.welcome img {
+    width: 60%;
+}
+.welcome h1 {
+    font-size: 20px;
+}
+.welcome h1 .powered {
+    text-decoration: underline;
+    color: #CE0033;
+}
+.container {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+.formulaire {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
