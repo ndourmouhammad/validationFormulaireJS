@@ -11,4 +11,17 @@ body {
     border: 1px solid #CE0033;
     background-color: #CE0033;
     color: white;
+    cursor: pointer;
+}
+
+.btn-submit:hover 
+{
+    border: 1px solid #504DC1;
+    background-color: #504DC1;
+    color: white;
+}
+
+.error
+{
+    color: #CE0033;
 }
