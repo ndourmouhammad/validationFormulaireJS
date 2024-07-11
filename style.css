@@ -112,13 +112,27 @@ button {
   body {
     /* Exemples de styles pour les téléphones */
     font-size: 14px;
+    width: 100%;
+    margin: 0 auto;
   }
-  .welcome {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .welcome img {
     display: none;
   }
-
+  .welcome h2 { 
+    font-size: 16px;
+  }
+  .welcome .table {
+    font-size: 12.5px;
+  }
+  .welcome button {
+    width: 80%;
+  }
   .formulaire {
-    width: 90%; /* Par exemple, réduire la largeur du formulaire */
+    width: 100%; /* Par exemple, réduire la largeur du formulaire */
     padding: 15px;
   }
 
