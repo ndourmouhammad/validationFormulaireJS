@@ -65,15 +65,20 @@
             />
             <span id="motdepasseError" class="error"></span>
           </div>
-          <button class="btn btn-submit" type="submit" id="submitBtn" disabled>
+          <button class="btn btn-submit" type="submit" id="submitBtn" disabled onclick="saveData()">
             S'inscrire
           </button>
         </form>
       </div>
       <div class="welcome">
         <img src="images/sol-logo.png" alt="" />
-        <h1>La plateforme collaborative d'apprentissage en pédagogie active</h1>
-        <h1 id="powered">Powered by Mouhammad Ndour</h1>
+        <!-- <h1>La plateforme collaborative d'apprentissage en pédagogie active</h1>
+        <h1 id="powered">Powered by Mouhammad Ndour</h1> -->
+        <h2>Données enregistrées :</h2>
+        
+        <p id="storedData" class="table"></p>
+        <button class="btn btn-danger" onclick="clearData()">Vider le tableau</button>
+        
       </div>
     </div>
 

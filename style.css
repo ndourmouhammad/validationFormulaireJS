@@ -5,7 +5,7 @@ body {
   margin: 0;
   font-family: "Nunito Sans", sans-serif;
   display: flex;
-  align-items: center;
+  align-items:flex-start;
   justify-content: center;
   height: 100vh; /* Ajout de cette ligne */
   background-image: url(images/background-simplon-pattern.svg);
@@ -54,7 +54,7 @@ body {
 .container {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  
   gap: 2rem;
 }
 .formulaire {
@@ -81,6 +81,33 @@ body {
   font-weight: bold;
   margin-top: 20px;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  overflow-y: scroll;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+th {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+tr:hover {
+  background-color: rgba(255, 0, 0, 0.2); /* Rouge un peu plus foncé au survol */
+}
+.table {
+  margin-top: -2rem;
+}
+
+button {
+  width: 25%;
+}
+
 @media only screen and (max-width: 767px) {
   body {
     /* Exemples de styles pour les téléphones */
