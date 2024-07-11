@@ -171,38 +171,58 @@ function saveData() {
 
 // Fonction pour afficher les données stockées sous forme de tableau
 function displayData() {
-  const users = JSON.parse(localStorage.getItem('users')) || [];
-  const div1 = document.getElementById('storedData');
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const div1 = document.getElementById("storedData");
+  const noDataMessage = document.getElementById("noDataMessage");
 
   // Réinitialiser le contenu
-  div1.innerHTML = '';
+
+
+  div1.innerHTML = "";
+  if (users.length === 0) {
+    // Afficher le message "Pas de données pour l'instant"
+    noDataMessage.style.display = "block";
+    btnClear.style.display = "none";
+    return;
+  }
+  else
+   {
+    btnClear.style.display = "block";
+   }
+
+  // Cacher le message "Pas de données pour l'instant"
+  noDataMessage.style.display = "none";
 
   // Créer le tableau
-  const table = document.createElement('table');
-  const thead = document.createElement('thead');
-  const tbody = document.createElement('tbody');
+  const table = document.createElement("table");
+  const thead = document.createElement("thead");
+  const tbody = document.createElement("tbody");
 
   // Ajouter les en-têtes de colonne
-  const headers = ['Prénom', 'Nom', 'Email'];
-  const tr = document.createElement('tr');
-  headers.forEach(header => {
-      const th = document.createElement('th');
-      th.innerText = header;
-      tr.appendChild(th);
+  const headers = ["Prénom", "Nom", "Email"];
+  const tr = document.createElement("tr");
+  headers.forEach((header) => {
+    const th = document.createElement("th");
+    th.innerText = header;
+    tr.appendChild(th);
   });
   thead.appendChild(tr);
   table.appendChild(thead);
 
   // Ajouter les données des utilisateurs
-  users.forEach(user => {
-      const tr = document.createElement('tr');
-      const dataToDisplay = { prenom: user.prenom, nom: user.nom, email: user.email };
-      Object.values(dataToDisplay).forEach(value => {
-          const td = document.createElement('td');
-          td.innerText = value;
-          tr.appendChild(td);
-      });
-      tbody.appendChild(tr);
+  users.forEach((user) => {
+    const tr = document.createElement("tr");
+    const dataToDisplay = {
+      prenom: user.prenom,
+      nom: user.nom,
+      email: user.email,
+    };
+    Object.values(dataToDisplay).forEach((value) => {
+      const td = document.createElement("td");
+      td.innerText = value;
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
   });
 
   table.appendChild(tbody);
@@ -211,7 +231,7 @@ function displayData() {
 
 // Fonction pour vider les données stockées dans localStorage et réinitialiser l'affichage
 function clearData() {
-  localStorage.removeItem('users');
+  localStorage.removeItem("users");
   displayData();
 }
 
